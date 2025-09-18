@@ -1,0 +1,335 @@
+1.) LINUX DISTRO AND FLAVORS
+DEBIAN - UBUNTU
+       - LTS
+
+RED HAT (RHEL) - FEDORA
+               - CENTOS (FREE VERSION)
+
+LINUX - OPEN SOURCE
+      - CLI, NOT GUI      WINDOWS-
+        CERTIFICATION    -SUPPORT
+      - LPI, RH          -W/ GUI
+      - LPI1 RHCSA      -W/FEE
+      - LPI2 RHCE
+      - LPI3 RHCT
+LPI - VENDOR NEUTRAL (WRITTTEN)
+RH - (HANDS-ON)
+
+2.) LINUX FILESYSTEM HIERARCHY
+cd \
+ls - List of files
+/ - root directory
+
+bin        sbin        home        root        var    etc      boot           dev     proc
+BINARIES   BINARIES    HOME        HOME        VARI-  SYS.    -KERNEL         DEVICE  SYST.
+FOR        FOR THE     DIRECTORY   DIR OF      ABLE   CONFIG  -BOOTLOADERS    FILES   PROCESSES
+REGULAR    SUPERUSER/  OF REGULAR  ROOT USER   FILES
+USERS      ROOT USER   USER        /root       FTP
+                       len/home/len            index.html
+                       koji/home.koji          40GB
+-NOT DITRACTIVE FILES
+
+
+# 2 MAJOR TYPES OF USERS
+  1. REGULAR USER
+  2. SUPER USER / ROOT USER
+      -> ADMIN
+
+copy.exe -> binaries
+format.exe
+
+len c:\User\len\ -> HOME DIRECTORIES
+kosi c:\User\kosi\
+OS LINUX -> CALLED "KERNEL"
+
+# RELATIVE AND ABSOLUTE PATHS
+  # ABSOLUTE PATH -> FILE LOCATION WITH RESPECT TO THE ROOT DIRECTORY (/)
+    C:\Users\john\mydocs\mypics\boracay\myprofilepic.jpg
+      /home/john/mydocs/mypics/boracay/myprofilepic.jpg
+
+  # RELATIVE PATH -> FILE LOCATION RELATIVE TO YOUR PRESENT DIRECTORY
+    /
+    home     mypic
+    john     bora
+    my docs  profile.jpg
+
+--------------------------------------------------------
+COMMANDS:
+--------------------------------------------------------
+NEW FOLDER            mkdir <directory name>
+NEW FILE              touch <filename>
+COPY PASTE FILE       cp <source> <destination>
+COPY PASTE FOLDER     cp -r <source> <destination>
+CUT AND PASTE FILE    mv <source> <destination>
+CUT AND PASTE FOLDER  mv <source> <destination>
+RENAME FILE           mv <orig filename> <new filename>
+RENAME FOLDER         mv <orig filename> <new filename>
+DELETE FILE           rm <filename>
+DELETE FOLDER         rm -r <dir name>
+PRESENT WORKING DIRECTORY  pwd
+CHANGE DIRECTORY      cd <directory name>
+UP ONE DIRECTORY      cd ...
+LISTING FILES         ls; ls <directory name>
+--------------------------------------------------------
+
+cd/home/user1
+mkdr/sampledir
+ls
+clear -> CLEAN THE dr CLI
+ls/home.user1
+DESKTOP DOWNLOADS...
+*sampledir
+[TAB] cd/home/user1/sampledir/
+[↑] mkdir dir1 ... 5
+
+
+#... COPYING AND PASTING FILES
+      pwd
+      #cd /
+
+      VERIFY: #pwd
+
+#... CREATE A NEW DIRECTORY -> /sampledir  
+      #mkdir/sample dir      ; "/" - PARENT DIRECTORY
+
+      VERIFY: #ls
+              #ls /
+
+#... PASOK SA LOOB NG /sampledir
+      #cd /sampledir
+
+* CREATE THESE DIRECTORIES
+    dir1  mkdir dir1    #mkdir <dir name>
+    dir2  mkdir dir2
+    dir3  mkdir dir3
+    dir4  mkdir dir4
+    dir5  mkdir  dir5
+
+    VERIFY: #ls
+            #ls /sampledir
+
+*CREATE THESE FILE INSIDE /sampledir
+    file1  touch file1    #touch <filename>
+    file2  touch file2
+    file3  touch file3
+    file4  touch file4
+    file5  touch file5
+
+    VERIFY: #ls
+
+#... COPY PASTE FILE  #cp <source> <destination>
+cp file1 dir1
+[TAB] ls/home/user1/sampledir/
+
+VERIFY: dir1
+        ~ file1
+
+#... COPYING AND PASTING FILES
+      SCENARIO: COPY file1 PASTE NATIN SA LOOB NG dir1\
+      > ABSOLUTE PATH:
+          #cp <source> <destination>
+          #cp /sampledir/file1 /sampledir/dir1
+
+# 2 WAYS TO COPY AND PASTE FILES
+    1. COPY AND PASTE FILE, RETAIN FILENAME
+    2. COPY AND PASTE FILE, NEW FILENAME
+
+    VERIFY: #ls /sample/dir1
+
+> RELATIVE PATH:
+    #cp file1 dir1
+
+VERIFY: #ls dir1 -> file1
+
+2. COPY AND PASTE FILE , NEW FILENAME
+      SCENARIO: COPY file2, PASTE SA LOOB NG /dir3, NEW FILENAME file2copy
+      > ABSOLUTE PATH:
+       > SYNTAX: #cp <source> <destination>
+                 #cp /sampledir/file2 /sampledir/dir3/file2copy
+
+      >RELATIVE PATH:
+            #cp file2 dir3/file2copy
+
+      VERIFY: #ls dir3 -> file2copy
+              #ls /sampledir/dir3
+
+#... COPYING AND PASTING DIRECTORIES
+    #... COPY PASTE FOLDER #cp -r <source> <destination>
+    #... COPYING AND PASTE FOLDERS
+          SCENARIO: COPY dir1, PASTE SA LOOB NG dir2 RETAIN FILENAME
+          SYNTAX: #cp -r <source> <destination>
+          > ABSOLUTE PATH:
+              #cp -r /sampledir/dir1 /sample/dir2
+          COMMAND OPTIONS:
+              MANUAL OR INFO COMMAND
+                #man cp
+                #info cp
+RELATIVE PATH:
+#cp -r dir2 dir5/dir2copy
+VERIFY: #ls /sampledir/dir5
+        #ls dir5 -> dir2copy
+
+#... CUT AND PASTE FILES
+     SCENARIO:  CUT file1 PASTE SA LOOB NG dir2 RETAIN FILENAME
+      > ABSOLUTE PATHS:
+          SYNTAX: #mv <source> <destination>
+                  #mv /sampledir/file1 /sampledir/dir2
+      > RELATIVE PATHS:
+              #mv file1 dir2
+
+      VERIFY: #ls /sampledir/dir2
+              #ls dir2 -> dir1 file1
+
+
+    SCENARIO: CUT file2, PASTE SA LOOB NG dir5, NEW FILENAME file2cut
+      > ABSOLUTE PATH:
+            #mv /sampledir/file2 /sampledir/dir5/file2cut
+      > RELATIVE PATH:
+            #mv file2 fir5/file2cut
+      VERIFY: #ls /sampledir/dir5
+              #ls dir5 -> dir2copy file2cut
+
+#... CUTTING AND PASTING DIRECTORIES
+      SCENARIO: CUT dir1, PASTE SA LOOB NG dir4, RETAIN FILENAME
+      > ABSOLUTE PATH:
+            #mv /sampledir/dir2 /sampledir/dir3/dir2cut
+
+      > RELATIVE PATH:
+            #mv dir2 dir3/dir2cut
+
+      VERIFY: #ls /sampledir/dir3
+              #ls dir3 -> dir2cut file2copy
+
+#... RENAMING FILES AND DIRECTORIES
+     RENAMING FILES
+      SCENARIO: RENAME file3 INFO file3new
+      SYNTAX: #mv <orig filename> <new filename>
+      > ABSOLUTE PATH:
+            #mv /sampledir/file3 /sampledir/file3new
+
+      > RELATIVE PATH:
+            #mv file3 file3new
+
+      VERIFY: #ls /sampledir
+              #ls -> file3new
+
+#... RENAMING DIRECTORIES
+    SCENARIO: RENAME dir3, into dir3new
+    > ABSOLUTE PATH:
+            #mv /sampledir/dir3 /sampledir/dir3new
+
+    > RELATIVE PATH:
+            #mv dir3 dir3new
+
+    VERIFY: #ls /sampledir
+            #ls ->dir3new
+
+#... DELETING FILES AND DIRECTORIES
+#... DELETING FILES
+    SCENARIO: DELETE YUNG file4
+    SYNTAX: #rm <filename>
+    > ABSOLUTE PATH: #rm /sampledir/file4
+    > RELATIVE PATH: #rm file 4
+              VERIFY: #ls -> file4 <- deleted
+                      #ls /sampledir
+
+#... DELETING DIRECTORIES
+      SCENARIO: DELETE dir4
+      SYNTAX: #rm -rf <dirname>
+              -r -> CURSIVE
+               f -> FORCE
+      > ABSOLUTE PATH:
+              #rm -r /sampledir/dir4
+      > RELATIVE PATH:
+              #rm -r dir4
+
+      SCENARIO: FORCE DELETE dir5
+              #rm -rf dir5
+              #rm -rf /sampledir/dir5
+
+#... ANOTHER WAY TO REMOVE A DIRECTORY:
+              #rmdir <dirname>
+
+#... TRY TO REMOVE dir3new DIRECTORY
+              #rmdir dir3new
+
+#... CREATE A NEW DIRECTORY, blankdir
+              #mkdir blankdir
+
+#... REMOVE blankdir USING rmdir COMMAND
+              #rmdir blankdir
+
+
+----------------------------------------------------------
+BASIC LINUX EXERCISES
+----------------------------------------------------------
+1. GO TO /-> cd/ ->#cd /home/user1/
+2. CREATE A NEW DIRECTORY /practicedir #mkdir practicedir
+3. PASOK SA LOOB NG /practicedir #cd /home/user1/practicedir
+4. CREATE THESE DIRECTORIES
+    dir1 #mkdir dir1
+    dir2 #mkdir dir2
+    dir3 #mkdir dir3
+    dir4 #mkdir dir4
+    dir5 #mkdir dir5
+5. CREATE THESE FILES:
+    file1 #touch file1
+    file2 #touch file2
+    file3 #touch file3
+    file4 #touch file4
+    file5 #touch file5
+6. COPY file1 TO dir1, RETAIN FILENAME
+7. COPY file2 TO dir2, GIVE A NEW FILENAME copiedfile2
+8. COPY dir1 TO dir5, RETAIN FILENAME
+9. COPY dir2 TO dir4. GIVE A NEW FILENAME dir2copy
+10. CUT file2 PASTE TO dir1, RETAIN FILENAME
+11. CUT file3 PASTE TO dir4, GIVE NEW FILENAME file3cut
+12. CUT dir3 PASTE TO dir4, RETAIN FILENAME
+13. CUT dir1 PASTE TO dir2, GIVE A NEW FILENAME dir1cut
+14. RENAME file4 TO file4new
+15. RENAME dir4 TO dir4new
+16. DELETE file5
+17. DELETE dir3
+-------------------------------------------------------
+
+*GUIDE ANSWERS ABOVE WITH EXAMPLE COMMANDS
+
+
+*TAKING QUIZ (SHARING IS CARING)
+
+1. Which directory is commonly used to store the directories of regular users?
+
+2. Which directory commonly used to store system configuration files?
+
+3. What do you call the user type that is equivalent to the administrator account in windows?
+
+4. Which directory is commonly used to store the kernel and system bootloaders?
+
+5. Which type of path is this -> config/myconfig/cfg.txt
+
+6. Which type of path is this --> /etc/sysconfig/network-conf?
+
+7. Which command is used to cut and paste directories?
+
+8. Which command is used to rename files and directories?
+
+9. Which command can be used to remove empty directories?
+
+10. Which command can be used for force remove a directory?
+
+
+
+
+
+*ANSWERS
+1. /home
+2. /etc
+3. root user
+4. /boot
+5. relative path
+6. absolute path
+7. mv
+8. mv
+9. rnmdir
+10. rm -rf
+
